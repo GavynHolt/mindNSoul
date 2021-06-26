@@ -22,11 +22,7 @@ body {
   font-size: 2rem;
 }
 
-// .outer-wrapper {
-//   max-width: 1920px;
-//   width: 100%;
-//   margin: 0 auto;
-// }
+/* Home Styles */
 
 .wrapper {
   max-width: 1400px;
@@ -78,6 +74,10 @@ nav {
       }
     }
   }
+}
+
+a.selected {
+  color: $marigold;
 }
 
 .feature {
@@ -260,5 +260,40 @@ footer {
   p {
     margin: 0;
     text-align: center;
+  }
+}
+
+/* Blog Styles */
+#blog {
+  header {
+    background: url(../images/blog-image-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+  }
+
+  main {
+    background: $camoGreen;
+    display: flex;
+    justify-content: space-between;
+    section {
+      flex: 0 1 1000px;
+    }
+    aside {
+      background: $mudGreen;
+      flex: 0 1 500px;
+    }
+  }
+}
+
+/* Contact Styles */
+#contact {
+  header {
+    background: url(../images/contact-image-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
   }
 }
