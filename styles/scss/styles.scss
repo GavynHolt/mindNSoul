@@ -22,11 +22,11 @@ body {
   font-size: 2rem;
 }
 
-.outer-wrapper {
-  max-width: 1920px;
-  width: 100%;
-  margin: 0 auto;
-}
+// .outer-wrapper {
+//   max-width: 1920px;
+//   width: 100%;
+//   margin: 0 auto;
+// }
 
 .wrapper {
   max-width: 1400px;
@@ -110,9 +110,9 @@ nav {
 
 img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 h1 {
@@ -137,18 +137,17 @@ h2 {
     display: flex;
     justify-content: space-between;
     .image {
-      flex: 0 1 400px;
-      position: relative;
-      background: $mudGreen;
+      flex: 0 0.25 400px;
+      align-self: center;
+      box-shadow: 20px -20px $mudGreen;
       margin-right: 20px;
     }
     img {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
+      // object-fit: contain;
     }
     .text {
-      flex: 0 1 800px;
+      flex: 1 1 800px;
+      margin-right: 5vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -163,7 +162,7 @@ h2 {
   font-size: 3rem;
   padding: 1rem;
   background: $mudGreen;
-  color: white;
+  color: $iceBlue;
   text-decoration: none;
 }
 
@@ -180,7 +179,7 @@ h2 {
 
 .info {
   background: $camoGreen;
-  padding: 50px 0;
+  padding: 100px 0;
   > div {
     display: flex;
     flex-wrap: wrap;
@@ -195,7 +194,7 @@ h2 {
     font-weight: 900;
     font-size: 2.5rem;
     line-height: 2.5rem;
-    color: white;
+    color: $iceBlue;
     display: inline-block;
     padding: 10px;
     border-radius: 50%;
@@ -219,29 +218,55 @@ h2 {
 }
 
 .programs {
-  padding: 0 40px;
   background: $charcoal;
-  > div {
-    padding: 50px 0;
+  padding: 40px 0;
+  .container {
+    div:first-child {
+      margin-right: 5vw;
+    }
+    div:last-child {
+      margin-left: 5vw;
+    }
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: space-between;
     .image {
-      flex: 0 1 400px;
-      position: relative;
-      background: $mudGreen;
+      flex: 1 1 400px;
+      align-self: center;
+      box-shadow: 20px -20px $marigold;
       margin-right: 20px;
     }
-    img {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-    }
     .text {
-      flex: 0 1 800px;
+      flex: 1 1 400px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
     }
+  }
+}
+
+.bannerImage {
+}
+
+.freeTrials {
+  padding: 10vh 0;
+  background: $camoGreen;
+  .text {
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+footer {
+  margin: 0;
+  background: $charcoal;
+  p {
+    margin: 0;
+    text-align: center;
   }
 }
