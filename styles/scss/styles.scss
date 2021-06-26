@@ -65,9 +65,7 @@ nav {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-
     li {
-      // margin: 0 10px;
       a {
         padding: 10px;
         font-family: $fontLato;
@@ -141,9 +139,6 @@ h2 {
       align-self: center;
       box-shadow: 20px -20px $mudGreen;
       margin-right: 20px;
-    }
-    img {
-      // object-fit: contain;
     }
     .text {
       flex: 1 1 800px;
@@ -245,9 +240,6 @@ h2 {
       align-items: flex-start;
     }
   }
-}
-
-.bannerImage {
 }
 
 .freeTrials {
