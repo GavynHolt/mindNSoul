@@ -1,4 +1,4 @@
-@mixin headingFont($fontSize, $lineHeight, $letterSpacing) {
+@mixin headingFont($fontSize, $lineHeight: inherit, $letterSpacing: inherit) {
   font-family: $fontDokdo;
   color: $marigold;
   font-size: $fontSize;
@@ -7,8 +7,15 @@
 }
 
 @mixin paragraphFont {
-  font-family: $fontLato;;
+  font-family: $fontLato;
   line-height: 3.2rem;
   letter-spacing: 2px;
   color: $iceBlue;
+}
+
+@mixin formFont {
+  font-family: $fontLato;
+  font-weight: 300;
+  line-height: 3.2rem;
+  letter-spacing: 2px;
 }

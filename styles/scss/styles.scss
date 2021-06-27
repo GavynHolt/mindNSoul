@@ -114,7 +114,7 @@ img {
 }
 
 h1 {
-  @include headingFont(10.5rem, 9.96rem, 10.9px);
+  @include headingFont(11.5rem);
   margin: 0;
 }
 
@@ -124,7 +124,7 @@ p {
 }
 
 h2 {
-  @include headingFont(4rem, 5.8rem, 4.3px);
+  @include headingFont(4.5rem, 5.8rem, 4.3px);
 }
 
 .newAdventure {
@@ -265,6 +265,22 @@ footer {
 
 /* Blog Styles */
 #blog {
+  h1 {
+    @include headingFont(10.5rem, 6.96rem, 10.9px);
+  }
+
+  h3 {
+    font-family: $fontDokdo;
+    color: $iceBlue;
+    font-size: 3rem;
+    margin: 1.6rem 0;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 1.6rem 0;
+  }
+
   header {
     background: url(../images/blog-image-1.jpg);
     background-position: center;
@@ -274,26 +290,154 @@ footer {
   }
 
   main {
+    position: relative;
     background: $camoGreen;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     section {
+      position: relative;
+      top: -20vh;
+      margin-right: 5vw;
+      article {
+        padding: 5vw 5vw 5vw 10vw;
+        // padding-left: 10vw;
+        // padding-right: 5vw;
+      }
+      .image {
+        margin-left: 25px;
+        background: $mudGreen;
+        position: relative;
+      }
+      img {
+        position: relative;
+        top: -25px;
+        left: -25px;
+      }
       flex: 0 1 1000px;
+      border-bottom: 5px solid $mudGreen;
+      border-right: 5px solid $mudGreen;
     }
     aside {
       background: $mudGreen;
       flex: 0 1 500px;
+      padding: 0 0 20px 20px;
+      margin: calc(50px + 5vw) 0 0 5vw;
+      .image {
+        position: relative;
+      }
+      img {
+        position: relative;
+        top: -20px;
+        height: auto;
+        object-fit: contain;
+      }
+      ul {
+        padding-left: 40px;
+        color: $marigold;
+        a {
+          text-decoration: none;
+          @include paragraphFont();
+        }
+      }
     }
   }
 }
 
 /* Contact Styles */
 #contact {
+  h1 {
+    @include headingFont(10.5rem, 6.96rem, 10.9px);
+    margin-top: 1px;
+  }
+
   header {
     background: url(../images/contact-image-1.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 60vh;
+  }
+
+  .headings {
+    align-self: start;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  main {
+    background: $camoGreen;
+    position: relative;
+    section {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .form {
+    bottom: 5vw;
+    width: 75%;
+    background: $marigold;
+    position: relative;
+    .nameEmail {
+      display: flex;
+      input {
+        width: 50%;
+      }
+      input:first-of-type {
+        margin-right: 10px;
+      }
+    }
+    form {
+      background: $charcoal;
+      height: 100%;
+      position: relative;
+      bottom: 25px;
+      right: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3vw;
+      input,
+      textarea {
+        border: 0;
+        background: $charcoal;
+        color: $iceBlue;
+        @include formFont();
+        padding-left: 10px;
+      }
+      input {
+        border-bottom: 2px solid $marigold;
+      }
+      textarea {
+        border: 2px solid $marigold;
+        margin: 40px 0;
+      }
+      button {
+        border: 0;
+        padding: 5px;
+        font-family: $fontDokdo;
+        color: $iceBlue;
+        font-size: 3rem;
+        background: $mudGreen;
+      }
+    }
+  }
+
+  .contactInfo {
+    width: 25%;
+    margin: 5vw 2.5vw;
+    ul {
+      color: $marigold;
+      li {
+        display: inline-block;
+        font-size: 2.5rem;
+        margin: 0 10px;
+      }
+      li:first-child {
+        margin-left: 0;
+      }
+    }
   }
 }
