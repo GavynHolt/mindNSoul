@@ -657,6 +657,7 @@ footer p {
 }
 #blog main aside .image {
   position: relative;
+  overflow: hidden;
 }
 #blog main aside img {
   position: relative;
@@ -664,6 +665,8 @@ footer p {
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
 }
 #blog main aside ul {
   padding-left: 40px;
@@ -717,10 +720,14 @@ footer p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 #contact .form {
   bottom: 5vw;
-  width: 75%;
+  -ms-flex-preferred-size: 900px;
+      flex-basis: 900px;
   background: #ffc600;
   position: relative;
 }
@@ -773,18 +780,12 @@ footer p {
 }
 #contact .form form button {
   border: 0;
-  padding: 5px;
-  font-family: "Dokdo", cursive;
-  color: #fafffe;
-  font-size: 3rem;
-  background: #555f02;
 }
 #contact .contactInfo {
-  width: 25%;
-  margin: 5vw 2.5vw;
-}
-#contact .contactInfo ul {
-  color: #ffc600;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 300px;
+          flex: 0 0 300px;
+  margin-left: 5vw;
 }
 #contact .contactInfo ul li {
   display: inline-block;
@@ -793,4 +794,7 @@ footer p {
 }
 #contact .contactInfo ul li:first-child {
   margin-left: 0;
+}
+#contact .contactInfo a {
+  color: #ffc600;
 }

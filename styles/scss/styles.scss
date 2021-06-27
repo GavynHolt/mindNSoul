@@ -301,8 +301,6 @@ footer {
       margin-right: 5vw;
       article {
         padding: 5vw 5vw 5vw 10vw;
-        // padding-left: 10vw;
-        // padding-right: 5vw;
       }
       .image {
         margin-left: 25px;
@@ -325,12 +323,14 @@ footer {
       margin: calc(50px + 5vw) 0 0 5vw;
       .image {
         position: relative;
+        overflow: hidden;
       }
       img {
         position: relative;
         top: -20px;
         height: auto;
         object-fit: contain;
+        transform: translateY(15px);
       }
       ul {
         padding-left: 40px;
@@ -372,12 +372,13 @@ footer {
     section {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
   }
 
   .form {
     bottom: 5vw;
-    width: 75%;
+    flex-basis: 900px;
     background: $marigold;
     position: relative;
     .nameEmail {
@@ -416,20 +417,14 @@ footer {
       }
       button {
         border: 0;
-        padding: 5px;
-        font-family: $fontDokdo;
-        color: $iceBlue;
-        font-size: 3rem;
-        background: $mudGreen;
       }
     }
   }
 
   .contactInfo {
-    width: 25%;
-    margin: 5vw 2.5vw;
+    flex: 0 0 300px;
+    margin-left: 5vw;
     ul {
-      color: $marigold;
       li {
         display: inline-block;
         font-size: 2.5rem;
@@ -438,6 +433,9 @@ footer {
       li:first-child {
         margin-left: 0;
       }
+    }
+    a {
+      color: $marigold;
     }
   }
 }
