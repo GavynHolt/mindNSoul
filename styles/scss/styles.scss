@@ -27,11 +27,12 @@ body {
 .wrapper {
   max-width: 1400px;
   width: 80%;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 header {
-  background: url(../images/home-image-1.jpg);
+  background-image: url(../images/home-image-1.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -56,8 +57,6 @@ nav {
   ul {
     flex: 0 1 500px;
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -65,7 +64,6 @@ nav {
       a {
         padding: 10px;
         font-family: $fontLato;
-        text-decoration: none;
         color: $iceBlue;
         font-weight: 700;
         text-transform: uppercase;
@@ -74,15 +72,13 @@ nav {
       }
     }
   }
-}
-
-a.selected {
-  color: $marigold;
+  .selected {
+    color: $marigold;
+  }
 }
 
 .feature {
   flex-grow: 1;
-  flex-shrink: 1;
   display: flex;
   .headings {
     flex: 1 1 900px;
@@ -98,7 +94,7 @@ a.selected {
     position: relative;
     flex: 1 0.25 600px;
     margin-right: 20px;
-    filter: sepia(0.6);
+    filter: sepia(0.7);
   }
   img {
     position: absolute;
@@ -118,31 +114,37 @@ h1 {
   margin: 0;
 }
 
-p {
-  @include paragraphFont();
-  margin: 1rem 0;
-}
-
 h2 {
   @include headingFont(4.5rem, 5.8rem, 4.3px);
+  margin: 2rem 0;
+}
+
+p {
+  @include paragraphFont();
+  margin: 1.6rem 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 .newAdventure {
-  background: $camoGreen;
-  padding: 20vh 0 40px;
-  > div {
-    padding: 50px 0;
+  background-color: $camoGreen;
+  padding: 20vh 0 3vw;
+  .container {
+    margin-top: 3vw;
+    margin-bottom: 3vw;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .image {
-      flex: 0 0.25 400px;
-      align-self: center;
-      box-shadow: 20px -20px $mudGreen;
-      margin-right: 20px;
+      flex: 0 0.5 400px;
+      box-shadow: -20px 20px $mudGreen;
+      margin-bottom: 20px;
     }
     .text {
       flex: 1 1 800px;
-      margin-right: 5vw;
+      padding-right: 5vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -156,25 +158,23 @@ h2 {
   font-family: $fontDokdo;
   font-size: 3rem;
   padding: 1rem;
-  background: $mudGreen;
+  background-color: $mudGreen;
   color: $iceBlue;
-  text-decoration: none;
 }
 
 .gallery-section {
-  padding: 50px 0;
-  background: $charcoal;
+  padding: 5vw 0;
+  background-color: $charcoal;
   .gallery {
-    margin: 20px 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 2vw;
   }
 }
 
 .info {
-  background: $camoGreen;
-  padding: 100px 0;
+  background-color: $camoGreen;
+  padding: 5vw 0;
   > div {
     display: flex;
     flex-wrap: wrap;
@@ -193,7 +193,7 @@ h2 {
     display: inline-block;
     padding: 10px;
     border-radius: 50%;
-    background: $mudGreen;
+    background-color: $mudGreen;
     position: absolute;
     left: -55px;
     top: 5px;
@@ -213,38 +213,56 @@ h2 {
 }
 
 .programs {
-  background: $charcoal;
-  padding: 40px 0;
+  background-color: $charcoal;
   .container {
-    div:first-child {
-      margin-right: 5vw;
-    }
-    div:last-child {
-      margin-left: 5vw;
-    }
-    margin-top: 50px;
-    margin-bottom: 50px;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     .image {
-      flex: 1 1 400px;
+      flex: 1 1 50%;
       align-self: center;
-      box-shadow: 20px -20px $marigold;
+    }
+    .imageLeft {
+      box-shadow: 20px 20px $marigold;
       margin-right: 20px;
+      margin-top: -5vw;
+    }
+    .imageRight {
+      box-shadow: -20px 20px $marigold;
+      margin-left: 29px;
+      margin-bottom: -5vw;
+      position: relative;
+      z-index: 10;
     }
     .text {
-      flex: 1 1 400px;
+      padding: 5vw 0;
+      flex: 1 1 500px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+      justify-content: flex-start;
     }
+    .textLeft {
+      align-items: flex-end;
+      margin-right: 10%;
+    }
+    .textRight {
+      justify-content: flex-end;
+      align-items: flex-start;
+      margin-left: 10%;
+    }
+  }
+  .container:first-child {
+    margin-right: 10%;
+    // margin-bottom: 5vw;
+  }
+  .container:last-child {
+    flex-direction: row-reverse;
+    margin-left: 10%;
   }
 }
 
 .freeTrials {
   padding: 10vh 0;
-  background: $camoGreen;
+  background-color: $camoGreen;
   .text {
     padding: 0 5vw;
     display: flex;
@@ -256,7 +274,7 @@ h2 {
 
 footer {
   margin: 0;
-  background: $charcoal;
+  background-color: $charcoal;
   p {
     margin: 0;
     text-align: center;
@@ -277,69 +295,102 @@ footer {
     font-weight: 400;
   }
 
-  p {
-    margin: 1.6rem 0;
-  }
-
   header {
-    background: url(../images/blog-image-1.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url(../images/blog-image-1.jpg);
     height: 60vh;
   }
 
+  form {
+    background-color: $camoGreen;
+    margin: 3vw 0;
+  }
+
+  input,
+  textarea {
+    background-color: $camoGreen;
+  }
+
   main {
+    p {
+      margin: 1.6rem 0;
+    }
     position: relative;
-    background: $camoGreen;
+    background-color: $camoGreen;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    section {
-      position: relative;
-      top: -20vh;
-      margin-right: 5vw;
-      article {
-        padding: 5vw 5vw 5vw 10vw;
-      }
-      .image {
-        margin-left: 25px;
-        background: $mudGreen;
-        position: relative;
-      }
-      img {
-        position: relative;
-        top: -25px;
-        left: -25px;
-      }
-      flex: 0 1 1000px;
-      border-bottom: 5px solid $mudGreen;
-      border-right: 5px solid $mudGreen;
-    }
-    aside {
-      background: $mudGreen;
-      flex: 0 1 500px;
-      padding: 0 0 20px 20px;
-      margin: calc(50px + 5vw) 0 0 5vw;
-      .image {
-        position: relative;
-        overflow: hidden;
-      }
-      img {
-        position: relative;
-        top: -20px;
-        height: auto;
-        object-fit: contain;
-        transform: translateY(15px);
-      }
-      ul {
-        padding-left: 40px;
-        color: $marigold;
-        a {
-          text-decoration: none;
-          @include paragraphFont();
-        }
-      }
+  }
+}
+
+.blogContainer {
+  margin-right: 5vw;
+  flex: 0 1 1000px;
+}
+
+.blogPost {
+  position: relative;
+  margin-top: -20vh;
+  margin-bottom: 2.5vw;
+  border-bottom: 5px solid $mudGreen;
+  border-right: 5px solid $mudGreen;
+  article {
+    padding: 5vw 5vw 5vw 10vw;
+  }
+  .image {
+    margin-left: 25px;
+    background-color: $mudGreen;
+    position: relative;
+  }
+  img {
+    position: relative;
+    left: -25px;
+    top: -25px;
+  }
+}
+
+.comments {
+  h2 {
+    color: $iceBlue;
+  }
+  padding-left: 10vw;
+  .image {
+    flex: 0 0 80px;
+    height: 80px;
+  }
+}
+
+.comment {
+  margin: 2.5vw 0;
+  display: flex;
+  h3 {
+    margin: 0;
+    @include paragraphFont();
+    color: $marigold;
+  }
+  .text {
+    padding: 0 3vw;
+  }
+}
+
+aside {
+  background-color: $mudGreen;
+  flex: 0 1 500px;
+  padding: 0 0 20px 20px;
+  margin: calc(50px + 5vw) 0 0 5vw;
+  .image {
+    position: relative;
+  }
+  img {
+    position: relative;
+    top: -20px;
+    height: auto;
+    object-fit: contain;
+  }
+  ul {
+    padding-left: 40px;
+    color: $marigold;
+    a {
+      @include paragraphFont();
     }
   }
 }
@@ -352,10 +403,7 @@ footer {
   }
 
   header {
-    background: url(../images/contact-image-1.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url(../images/contact-image-1.jpg);
     height: 60vh;
   }
 
@@ -367,7 +415,7 @@ footer {
   }
 
   main {
-    background: $camoGreen;
+    background-color: $camoGreen;
     position: relative;
     section {
       display: flex;
@@ -377,65 +425,76 @@ footer {
   }
 
   .form {
-    bottom: 5vw;
     flex-basis: 900px;
-    background: $marigold;
+    bottom: 5vw;
+    background-color: $marigold;
     position: relative;
-    .nameEmail {
-      display: flex;
-      input {
-        width: 50%;
-      }
-      input:first-of-type {
-        margin-right: 10px;
-      }
-    }
-    form {
-      background: $charcoal;
-      height: 100%;
-      position: relative;
-      bottom: 25px;
-      right: 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 3vw;
-      input,
-      textarea {
-        border: 0;
-        background: $charcoal;
-        color: $iceBlue;
-        @include formFont();
-        padding-left: 10px;
-      }
-      input {
-        border-bottom: 2px solid $marigold;
-      }
-      textarea {
-        border: 2px solid $marigold;
-        margin: 40px 0;
-      }
-      button {
-        border: 0;
-      }
-    }
   }
 
-  .contactInfo {
-    flex: 0 0 300px;
-    margin-left: 5vw;
-    ul {
-      li {
-        display: inline-block;
-        font-size: 2.5rem;
-        margin: 0 10px;
-      }
-      li:first-child {
-        margin-left: 0;
-      }
+  form {
+    background-color: $charcoal;
+    position: relative;
+    bottom: 25px;
+    right: 25px;
+    padding: 3vw;
+  }
+
+  input,
+  textarea {
+    background-color: $charcoal;
+  }
+}
+
+.contactInfo {
+  flex: 0 0 300px;
+  margin-left: 5vw;
+  ul {
+    li {
+      display: inline-block;
+      font-size: 2.5rem;
+      margin: 0 10px;
     }
-    a {
-      color: $marigold;
+    li:first-child {
+      margin-left: 0;
     }
+  }
+  a {
+    color: $marigold;
+  }
+}
+
+// General Form Styles
+form {
+  .nameEmail {
+    display: flex;
+    input {
+      width: 50%;
+    }
+    input:first-of-type {
+      margin-right: 3vw;
+    }
+  }
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  input,
+  textarea {
+    border: 0;
+    color: $iceBlue;
+    @include formFont();
+    padding-left: 10px;
+  }
+  input {
+    border-bottom: 2px solid $marigold;
+    padding-bottom: 3.2rem;
+  }
+  textarea {
+    border: 2px solid $marigold;
+    margin: 40px 0;
+    padding-top: 3.2rem;
+  }
+  button {
+    border: 0;
   }
 }

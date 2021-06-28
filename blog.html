@@ -26,47 +26,104 @@
     </header>
 
     <main>
-      <section>
-        <div class="image">
-          <img src="./images/post-image.jpg" alt="A gong" />
-        </div>
-        <article>
-          <h2>Come and discover our space</h2>
-          <p>Monday May 5th, 2019 by <em>Saron</em></p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque
-            aliquam, facere possimus officiis recusandae iusto at sunt error
-            esse commodi ullam eligendi a labore amet nemo dicta. Ipsam, rerum!
-            Unde autem voluptate eos dicta. Neque nihil quisquam reiciendis
-            exercitationem porro autem maiores. Cupiditate atque ipsum tempora
-            rem quibusdam delectus debitis.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            quam dignissimos soluta distinctio esse sequi beatae. Dignissimos
-            blanditiis iure ipsum maiores optio sequi similique atque provident
-            asperiores, commodi fugiat, totam doloribus minima, alias magni et
-            deserunt consequatur repudiandae molestias non voluptas suscipit
-            harum. Vel tempore laudantium in pariatur placeat quidem!
-          </p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde amet
-            suscipit, maiores nesciunt cupiditate nihil provident culpa magni
-            labore soluta tempore quasi. Exercitationem ab, aliquam numquam
-            laboriosam beatae magnam nam sed mollitia quam sunt optio tempore
-            dolorem cumque provident obcaecati ullam inventore accusantium
-            aperiam dicta, nostrum ipsum labore adipisci minima. Cupiditate
-            corporis magnam explicabo, quibusdam inventore maiores totam
-            repudiandae aspernatur quo sit itaque unde dolores ipsum? Ipsam
-            cumque, eos aliquid vero nam dolores autem accusantium.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            libero excepturi ex illum nam commodi nobis eos? Voluptate nobis,
-            exercitationem cumque quisquam corporis modi saepe!
-          </p>
-        </article>
-      </section>
+      <div class="blogContainer">
+        <section class="blogPost">
+          <div class="image">
+            <img src="./images/post-image.jpg" alt="A gong" />
+          </div>
+          <article>
+            <h2>Come and discover our space</h2>
+            <p>Monday May 5th, 2019 by <em>Saron</em></p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque
+              aliquam, facere possimus officiis recusandae iusto at sunt error
+              esse commodi ullam eligendi a labore amet nemo dicta. Ipsam,
+              rerum! Unde autem voluptate eos dicta. Neque nihil quisquam
+              reiciendis exercitationem porro autem maiores. Cupiditate atque
+              ipsum tempora rem quibusdam delectus debitis.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              quam dignissimos soluta distinctio esse sequi beatae. Dignissimos
+              blanditiis iure ipsum maiores optio sequi similique atque
+              provident asperiores, commodi fugiat, totam doloribus minima,
+              alias magni et deserunt consequatur repudiandae molestias non
+              voluptas suscipit harum. Vel tempore laudantium in pariatur
+              placeat quidem!
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
+              amet suscipit, maiores nesciunt cupiditate nihil provident culpa
+              magni labore soluta tempore quasi. Exercitationem ab, aliquam
+              numquam laboriosam beatae magnam nam sed mollitia quam sunt optio
+              tempore dolorem cumque provident obcaecati ullam inventore
+              accusantium aperiam dicta, nostrum ipsum labore adipisci minima.
+              Cupiditate corporis magnam explicabo, quibusdam inventore maiores
+              totam repudiandae aspernatur quo sit itaque unde dolores ipsum?
+              Ipsam cumque, eos aliquid vero nam dolores autem accusantium.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+              libero excepturi ex illum nam commodi nobis eos? Voluptate nobis,
+              exercitationem cumque quisquam corporis modi saepe!
+            </p>
+          </article>
+        </section>
+        <section class="comments">
+          <h2>Comments:</h2>
+          <article class="comment">
+            <div class="image">
+              <img
+                src="./images/comment-image.jpg"
+                alt="image of commenter, Davin"
+              />
+            </div>
+            <div class="text">
+              <h3>Tuesday October 9th, 2019 by Davin</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos,
+                cupiditate provident, nesciunt, hic asperiores quam maiores
+                ullam a repellat dolorem facere unde laborum tempora ex nulla?
+                Asperiores sed nisi quas.
+              </p>
+            </div>
+          </article>
+          <article class="comment">
+            <div class="image">
+              <img
+                src="./images/comment-image2.jpg"
+                alt="image of commenter, Lisa"
+              />
+            </div>
+            <div class="text">
+              <h3>Wednesday October 10th, 2019 by Lisa</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos,
+                cupiditate provident, nesciunt, hic asperiores quam maiores
+                ullam a repellat dolorem facere unde laborum tempora ex nulla?
+                Asperiores sed nisi quas.
+              </p>
+            </div>
+          </article>
+          <form action="#">
+            <div class="nameEmail">
+              <label for="name" class="sr-only">Name</label>
+              <input id="name" type="text" placeholder="Name" />
+              <label for="email" class="sr-only">Email address</label>
+              <input id="email" type="email" placeholder="Email address" />
+            </div>
+            <label for="comment" class="sr-only">Comment</label>
+            <textarea
+              name="comment"
+              id="comment"
+              cols="30"
+              rows="6"
+              placeholder="Comment"
+            ></textarea>
+            <button class="styledLink" type="submit">Submit</button>
+          </form>
+        </section>
+      </div>
       <aside>
         <div class="image">
           <img src="./images/sidebar-image.jpg" alt="pile of rocks" />
@@ -86,5 +143,8 @@
         </div>
       </aside>
     </main>
+    <footer>
+      <p>Copyright &copy 2019 HackerYou</p>
+    </footer>
   </body>
 </html>
