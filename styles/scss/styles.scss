@@ -23,6 +23,13 @@ body {
 }
 
 /* Home Styles */
+.outerWrapper {
+  max-width: 1600px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: $charcoal;
+}
 
 .wrapper {
   max-width: 1400px;

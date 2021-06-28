@@ -251,6 +251,14 @@ body {
 }
 
 /* Home Styles */
+.outerWrapper {
+  max-width: 1600px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #262725;
+}
+
 .wrapper {
   max-width: 1400px;
   width: 80%;
