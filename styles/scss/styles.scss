@@ -220,50 +220,52 @@ a {
 }
 
 .programs {
+  padding: 50px 0;
   background-color: $charcoal;
   .container {
-    display: flex;
-    flex-wrap: wrap;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 400px;
+    grid-auto-rows: 5vw;
+    gap: 15%;
     .image {
-      flex: 1 1 50%;
-      align-self: center;
-    }
-    .imageLeft {
-      box-shadow: 20px 20px $marigold;
-      margin-right: 20px;
-      margin-top: -5vw;
-    }
-    .imageRight {
-      box-shadow: -20px 20px $marigold;
-      margin-left: 29px;
-      margin-bottom: -5vw;
       position: relative;
-      z-index: 10;
+    }
+    img {
+      position: relative;
     }
     .text {
-      padding: 5vw 0;
-      flex: 1 1 500px;
+      max-width: 500px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
     }
-    .textLeft {
-      align-items: flex-end;
-      margin-right: 10%;
+  }
+  .container1 {
+    .image {
+      bottom: 80px;
     }
-    .textRight {
-      justify-content: flex-end;
+    img {
+      box-shadow: 20px 20px $marigold;
+    }
+    .text {
       align-items: flex-start;
-      margin-left: 10%;
     }
   }
-  .container:first-child {
-    margin-right: 10%;
-    // margin-bottom: 5vw;
-  }
-  .container:last-child {
-    flex-direction: row-reverse;
-    margin-left: 10%;
+  .container2 {
+    .image {
+      order: 2;
+      top: 80px;
+    }
+    img {
+      box-shadow: -20px 20px $marigold;
+    }
+    .text {
+      margin-left: auto;
+      align-items: flex-end;
+      text-align: right;
+    }
   }
 }
 
