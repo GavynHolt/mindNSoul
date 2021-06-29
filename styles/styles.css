@@ -293,6 +293,7 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-top: 1.6rem;
+  position: relative;
 }
 nav .logo {
   color: #ffc600;
@@ -322,6 +323,16 @@ nav ul li a {
   text-transform: uppercase;
   line-height: 2.9rem;
   letter-spacing: 1px;
+}
+nav .hamburger {
+  color: #ffc600;
+  font-family: "Dokdo", cursive;
+  font-size: 4.15rem;
+  height: 0;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: absolute;
 }
 nav .selected {
   color: #ffc600;
@@ -497,12 +508,15 @@ a {
   line-height: 2.5rem;
   color: #fafffe;
   display: inline-block;
+  height: 50px;
+  width: 50px;
+  text-align: center;
   padding: 10px;
   border-radius: 50%;
   background-color: #555f02;
   position: absolute;
   left: -55px;
-  top: 5px;
+  top: calc(2rem + 5px);
 }
 .info .customizedOffers::before {
   content: "";
@@ -915,16 +929,61 @@ form button {
             flex-direction: column;
   }
   #blog aside {
-    margin: 5vw auto;
-    max-width: 500px;
+    margin: 5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #blog aside .image {
+    width: 50%;
+    margin-right: 5vw;
+  }
+  #blog aside img {
+    top: 0;
+  }
+  #blog aside .text {
+    width: 50%;
   }
 
-  .blogContainer article,
-.blogContainer .comments {
+  article,
+.comments {
     padding-left: 5vw;
   }
 }
 @media (max-width: 800px) {
+  nav .hamburger {
+    height: auto;
+    position: relative;
+  }
+  nav ul {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+  }
+
+  #blog aside {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 0;
+  }
+  #blog aside .image {
+    width: 100%;
+    margin-right: 0;
+  }
+  #blog aside img {
+    width: auto;
+    margin: 0 auto;
+  }
+  #blog aside .text {
+    width: 100%;
+    padding-left: 5vw;
+  }
+
   #contact header {
     height: 50vh;
   }
@@ -951,6 +1010,29 @@ form button {
   }
 }
 @media (max-width: 480px) {
+  .blogPost article {
+    padding: 5vw;
+  }
+
+  .comments {
+    padding-left: 5vw;
+  }
+
+  .comment {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 0;
+  }
+  .comment .image {
+    -ms-flex-item-align: start;
+        align-self: start;
+  }
+  .comment .text {
+    padding: 0;
+  }
+
   .contactInfo {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;

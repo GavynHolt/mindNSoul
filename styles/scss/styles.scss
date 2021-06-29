@@ -56,10 +56,9 @@ nav {
   display: flex;
   justify-content: space-between;
   padding-top: 1.6rem;
+  position: relative;
   .logo {
-    color: $marigold;
-    font-family: $fontDokdo;
-    font-size: 4.15rem;
+    @include logoFont();
   }
   ul {
     flex: 0 1 500px;
@@ -78,6 +77,13 @@ nav {
         letter-spacing: 1px;
       }
     }
+  }
+  .hamburger {
+    @include logoFont();
+    height: 0;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: absolute;
   }
   .selected {
     color: $marigold;
@@ -200,12 +206,15 @@ a {
     line-height: 2.5rem;
     color: $iceBlue;
     display: inline-block;
+    height: 50px;
+    width: 50px;
+    text-align: center;
     padding: 10px;
     border-radius: 50%;
     background-color: $mudGreen;
     position: absolute;
     left: -55px;
-    top: 5px;
+    top: calc(2rem + 5px);
   }
   .customizedOffers::before {
     content: "\f015";
@@ -545,20 +554,60 @@ form {
       flex-direction: column;
     }
     aside {
-      margin: 5vw auto;
-      max-width: 500px;
+      margin: 5vw;
+      display: flex;
+      .image {
+        width: 50%;
+        margin-right: 5vw;
+      }
+      img {
+        top: 0;
+      }
+      .text {
+        width: 50%;
+      }
     }
   }
 
-  .blogContainer {
-    article,
-    .comments {
-      padding-left: 5vw;
-    }
+  article,
+  .comments {
+    padding-left: 5vw;
   }
 }
 
 @media (max-width: 800px) {
+  nav {
+    .hamburger {
+      height: auto;
+      position: relative;
+    }
+    ul {
+      position: absolute;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+
+  #blog {
+    aside {
+      flex-direction: column;
+      align-items: center;
+      padding-left: 0;
+      .image {
+        width: 100%;
+        margin-right: 0;
+      }
+      img {
+        width: auto;
+        margin: 0 auto;
+      }
+      .text {
+        width: 100%;
+        padding-left: 5vw;
+      }
+    }
+  }
+
   #contact {
     header {
       height: 50vh;
@@ -581,6 +630,22 @@ form {
 }
 
 @media (max-width: 480px) {
+  .blogPost article {
+    padding: 5vw;
+  }
+  .comments {
+    padding-left: 5vw;
+  }
+  .comment {
+    flex-direction: column;
+    padding-left: 0;
+    .image {
+      align-self: start;
+    }
+    .text {
+      padding: 0;
+    }
+  }
   .contactInfo {
     flex-wrap: wrap;
     text-align: center;
