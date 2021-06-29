@@ -633,6 +633,7 @@ footer p {
   font-size: 10.5rem;
   line-height: 6.96rem;
   letter-spacing: 10.9px;
+  margin: 2rem 0;
 }
 #blog h3 {
   font-family: "Dokdo", cursive;
@@ -644,6 +645,7 @@ footer p {
 #blog header {
   background-image: url(../images/blog-image-1.jpg);
   height: 60vh;
+  padding-bottom: calc( 20vh + 1vw );
 }
 #blog .headings {
   -webkit-box-flex: 1;
@@ -652,9 +654,9 @@ footer p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 #blog form {
   background-color: #1e140e;
@@ -699,14 +701,14 @@ footer p {
   padding: 5vw 5vw 5vw 10vw;
 }
 .blogPost .image {
-  margin-left: 25px;
+  margin-left: 1vw;
   background-color: #555f02;
   position: relative;
 }
 .blogPost img {
   position: relative;
-  left: -25px;
-  top: -25px;
+  left: -1vw;
+  top: -1vw;
 }
 
 .comments {

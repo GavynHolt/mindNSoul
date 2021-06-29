@@ -308,6 +308,7 @@ footer {
 #blog {
   h1 {
     @include headingFont(10.5rem, 6.96rem, 10.9px);
+    margin: 2rem 0;
   }
 
   h3 {
@@ -321,12 +322,15 @@ footer {
   header {
     background-image: url(../images/blog-image-1.jpg);
     height: 60vh;
+    padding-bottom: calc(
+      20vh + 1vw
+    ); // equal to negative margin of blog post plus the image offset
   }
 
   .headings {
     flex-grow: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
   }
 
   form {
@@ -366,14 +370,14 @@ footer {
     padding: 5vw 5vw 5vw 10vw;
   }
   .image {
-    margin-left: 25px;
+    margin-left: 1vw;
     background-color: $mudGreen;
     position: relative;
   }
   img {
     position: relative;
-    left: -25px;
-    top: -25px;
+    left: -1vw;
+    top: -1vw;
   }
 }
 
