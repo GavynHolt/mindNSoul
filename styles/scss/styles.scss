@@ -273,6 +273,7 @@ a {
       order: 2;
       top: 80px;
       margin-top: 20px;
+      margin-right: 20px;
     }
     img {
       box-shadow: -20px 20px $marigold;
@@ -576,9 +577,11 @@ form {
   }
 
   .programs {
+    width: 90%;
+    margin: 0 auto;
     .container {
       grid-template-columns: 1fr;
-      grid-template-rows: 400px 400px;
+      // grid-template-rows: 400px 400px;
       gap: 5vw;
       justify-items: center;
       .text {

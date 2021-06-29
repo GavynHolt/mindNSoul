@@ -580,6 +580,7 @@ a {
           order: 2;
   top: 80px;
   margin-top: 20px;
+  margin-right: 20px;
 }
 .programs .container2 img {
   -webkit-box-shadow: -20px 20px #ffc600;
@@ -942,9 +943,12 @@ form button {
     justify-self: end;
   }
 
+  .programs {
+    width: 90%;
+    margin: 0 auto;
+  }
   .programs .container {
     grid-template-columns: 1fr;
-    grid-template-rows: 400px 400px;
     gap: 5vw;
     justify-items: center;
   }
