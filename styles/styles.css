@@ -336,9 +336,11 @@ nav .selected {
   display: flex;
 }
 .feature .headings {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 900px;
-          flex: 1 1 900px;
+  margin-left: 5%;
+  padding: 3rem 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 900px;
+          flex: 0 1 900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -356,15 +358,15 @@ nav .selected {
 }
 .feature .image {
   position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0.25 600px;
-          flex: 1 0.25 600px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0.5 600px;
+          flex: 0 0.5 600px;
   margin-right: 20px;
   -webkit-filter: sepia(0.7);
           filter: sepia(0.7);
 }
 .feature img {
-  position: absolute;
+  position: relative;
   top: 20vh;
 }
 
@@ -554,6 +556,7 @@ a {
           box-shadow: 20px 20px #ffc600;
 }
 .programs .container1 .text {
+  margin-right: 10%;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -567,9 +570,12 @@ a {
 .programs .container2 img {
   -webkit-box-shadow: -20px 20px #ffc600;
           box-shadow: -20px 20px #ffc600;
+  -o-object-position: left;
+     object-position: left;
 }
 .programs .container2 .text {
-  margin-left: auto;
+  justify-self: end;
+  margin-left: 10%;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -624,6 +630,17 @@ footer p {
 #blog header {
   background-image: url(../images/blog-image-1.jpg);
   height: 60vh;
+}
+#blog .headings {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 #blog form {
   background-color: #1e140e;
@@ -765,10 +782,11 @@ aside ul a {
           align-items: center;
 }
 #contact main {
+  padding-bottom: 5vw;
   background-color: #1e140e;
   position: relative;
 }
-#contact main section {
+#contact main .contactMain {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -780,11 +798,13 @@ aside ul a {
           align-items: center;
 }
 #contact .form {
-  -ms-flex-preferred-size: 900px;
-      flex-basis: 900px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 900px;
+          flex: 1 1 900px;
   bottom: 5vw;
   background-color: #ffc600;
   position: relative;
+  margin-left: 25px;
 }
 #contact form {
   background-color: #262725;
@@ -799,9 +819,9 @@ aside ul a {
 }
 
 .contactInfo {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 300px;
-          flex: 0 0 300px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
   margin-left: 5vw;
 }
 .contactInfo ul li {
@@ -858,7 +878,93 @@ form textarea {
   border: 2px solid #ffc600;
   margin: 40px 0;
   padding-top: 3.2rem;
+  min-height: 300px;
 }
 form button {
   border: 0;
+}
+
+@media (max-width: 1050px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .feature {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .feature .headings {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .feature .image {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin: 0;
+  }
+  .feature img {
+    top: 0;
+  }
+
+  #blog main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #blog aside {
+    margin: 5vw auto;
+    max-width: 500px;
+  }
+
+  .blogContainer article,
+.blogContainer .comments {
+    padding-left: 5vw;
+  }
+}
+@media (max-width: 800px) {
+  #contact header {
+    height: 50vh;
+  }
+  #contact .headings {
+    text-align: center;
+  }
+
+  .contactInfo {
+    margin-left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+
+  .contactMain {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .socials {
+    margin: 1.6rem 0;
+  }
+}
+@media (max-width: 480px) {
+  .contactInfo {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    text-align: center;
+  }
+
+  form .nameEmail {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  form .nameEmail input {
+    width: 100%;
+  }
+  form .nameEmail input:first-of-type {
+    margin-right: 0;
+  }
 }

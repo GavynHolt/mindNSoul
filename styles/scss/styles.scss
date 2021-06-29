@@ -88,7 +88,9 @@ nav {
   flex-grow: 1;
   display: flex;
   .headings {
-    flex: 1 1 900px;
+    margin-left: 5%;
+    padding: 3rem 0;
+    flex: 0 1 900px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,12 +101,12 @@ nav {
   }
   .image {
     position: relative;
-    flex: 1 0.25 600px;
+    flex: 0 0.5 600px;
     margin-right: 20px;
     filter: sepia(0.7);
   }
   img {
-    position: absolute;
+    position: relative;
     top: 20vh;
   }
 }
@@ -250,6 +252,7 @@ a {
       box-shadow: 20px 20px $marigold;
     }
     .text {
+      margin-right: 10%;
       align-items: flex-start;
     }
   }
@@ -260,9 +263,11 @@ a {
     }
     img {
       box-shadow: -20px 20px $marigold;
+      object-position: left;
     }
     .text {
-      margin-left: auto;
+      justify-self: end;
+      margin-left: 10%;
       align-items: flex-end;
       text-align: right;
     }
@@ -307,6 +312,12 @@ footer {
   header {
     background-image: url(../images/blog-image-1.jpg);
     height: 60vh;
+  }
+
+  .headings {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
   }
 
   form {
@@ -424,9 +435,10 @@ aside {
   }
 
   main {
+    padding-bottom: 5vw;
     background-color: $camoGreen;
     position: relative;
-    section {
+    .contactMain {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -434,10 +446,11 @@ aside {
   }
 
   .form {
-    flex-basis: 900px;
+    flex: 1 1 900px;
     bottom: 5vw;
     background-color: $marigold;
     position: relative;
+    margin-left: 25px;
   }
 
   form {
@@ -455,7 +468,7 @@ aside {
 }
 
 .contactInfo {
-  flex: 0 0 300px;
+  flex: 1 1 300px;
   margin-left: 5vw;
   ul {
     li {
@@ -502,8 +515,85 @@ form {
     border: 2px solid $marigold;
     margin: 40px 0;
     padding-top: 3.2rem;
+    min-height: 300px;
   }
   button {
     border: 0;
+  }
+}
+
+@media (max-width: 1050px) {
+  .wrapper {
+    width: 90%;
+  }
+  .feature {
+    flex-wrap: wrap;
+    .headings {
+      order: 1;
+    }
+    .image {
+      order: 2;
+      margin: 0;
+    }
+    img {
+      top: 0;
+    }
+  }
+
+  #blog {
+    main {
+      flex-direction: column;
+    }
+    aside {
+      margin: 5vw auto;
+      max-width: 500px;
+    }
+  }
+
+  .blogContainer {
+    article,
+    .comments {
+      padding-left: 5vw;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  #contact {
+    header {
+      height: 50vh;
+    }
+    .headings {
+      text-align: center;
+    }
+  }
+  .contactInfo {
+    margin-left: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .contactMain {
+    flex-wrap: wrap;
+  }
+  .socials {
+    margin: 1.6rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactInfo {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  form {
+    .nameEmail {
+      flex-wrap: wrap;
+      input {
+        width: 100%;
+      }
+      input:first-of-type {
+        margin-right: 0;
+      }
+    }
   }
 }
