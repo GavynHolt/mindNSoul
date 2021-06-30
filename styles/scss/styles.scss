@@ -95,7 +95,7 @@ nav {
   display: flex;
   max-height: 100%;
   .headings {
-    margin-left: 5%;
+    margin-left: 2vw;
     padding: 3rem 0;
     flex: 0 1 900px;
     display: flex;
@@ -108,7 +108,7 @@ nav {
   }
   .image {
     position: relative;
-    flex: 0 0.5 500px;
+    flex: 0 1 800px;
     margin-right: 20px;
     filter: sepia(0.7);
   }
@@ -672,7 +672,6 @@ form {
 
   .feature {
     .headings {
-      margin-left: 2vw;
       h1 {
         font-size: calc(2.8rem + 11vw);
       }
