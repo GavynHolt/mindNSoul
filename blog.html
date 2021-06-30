@@ -113,19 +113,24 @@
             </div>
           </article>
           <form action="#">
-            <div class="nameEmail">
-              <label for="name" class="sr-only">Name</label>
-              <input id="name" type="text" placeholder="Name" />
-              <label for="email" class="sr-only">Email address</label>
-              <input id="email" type="email" placeholder="Email address" />
-            </div>
-            <label for="comment" class="sr-only">Comment</label>
-            <textarea
-              name="comment"
-              id="comment"
-              placeholder="Comment"
-            ></textarea>
-            <button class="styledLink" type="submit">Submit</button>
+            <fieldset>
+              <legend class="sr-only">Write a Comment</legend>
+              <div class="container">
+                <div class="nameEmail">
+                  <label for="name" class="sr-only">Name</label>
+                  <input id="name" type="text" placeholder="Name" />
+                  <label for="email" class="sr-only">Email address</label>
+                  <input id="email" type="email" placeholder="Email address" />
+                </div>
+                <label for="comment" class="sr-only">Comment</label>
+                <textarea
+                  name="comment"
+                  id="comment"
+                  placeholder="Comment"
+                ></textarea>
+                <button class="styledLink" type="submit">Submit</button>
+              </div>
+            </fieldset>
           </form>
         </section>
       </div>

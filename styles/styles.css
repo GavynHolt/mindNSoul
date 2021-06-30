@@ -271,7 +271,7 @@ header {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 80vh;
+  min-height: 80vh;
 }
 
 .headerContent {
@@ -345,6 +345,7 @@ nav .selected {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-height: 100%;
 }
 .feature .headings {
   margin-left: 5%;
@@ -369,6 +370,9 @@ nav .selected {
 }
 .feature .image {
   position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0.5 500px;
+          flex: 0 0.5 500px;
   margin-right: 20px;
   -webkit-filter: sepia(0.7);
           filter: sepia(0.7);
@@ -856,16 +860,6 @@ aside ul a {
 form {
   max-width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 form .nameEmail {
   display: -webkit-box;
@@ -877,6 +871,22 @@ form .nameEmail input {
 }
 form .nameEmail input:first-of-type {
   margin-right: 3vw;
+}
+form .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+form fieldset {
+  border: 0;
+  padding: 0;
 }
 form input,
 form textarea {
@@ -902,6 +912,10 @@ form textarea {
 form button {
   border: 0;
 }
+form button:hover,
+form button:focus {
+  border: 1px solid #ffc600;
+}
 
 @media (max-width: 1050px) {
   .wrapper {
@@ -925,6 +939,7 @@ form button {
   }
   .feature img {
     top: 0;
+    height: 100%;
   }
 
   .newAdventure {

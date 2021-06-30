@@ -43,7 +43,7 @@ header {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 80vh;
+  min-height: 80vh;
 }
 
 .headerContent {
@@ -93,6 +93,7 @@ nav {
 .feature {
   flex-grow: 1;
   display: flex;
+  max-height: 100%;
   .headings {
     margin-left: 5%;
     padding: 3rem 0;
@@ -107,7 +108,7 @@ nav {
   }
   .image {
     position: relative;
-    // flex: 0 0.5 600px;
+    flex: 0 0.5 500px;
     margin-right: 20px;
     filter: sepia(0.7);
   }
@@ -516,9 +517,15 @@ form {
     }
   }
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  fieldset {
+    border: 0;
+    padding: 0;
+  }
   input,
   textarea {
     border: 0;
@@ -540,6 +547,10 @@ form {
   button {
     border: 0;
   }
+  button:hover,
+  button:focus {
+    border: 1px solid $marigold;
+  }
 }
 
 @media (max-width: 1050px) {
@@ -557,6 +568,7 @@ form {
     }
     img {
       top: 0;
+      height: 100%;
     }
   }
 
