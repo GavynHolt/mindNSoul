@@ -463,13 +463,47 @@ a {
           align-items: flex-start;
 }
 
-.styledLink {
+.modalRoot {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(184, 190, 171, 0.5);
+  z-index: 100;
+}
+
+.modal {
+  position: absolute;
+  min-width: 300px;
+  width: 80%;
+  max-width: 800px;
+  -webkit-box-shadow: 15px 15px #ffc600;
+          box-shadow: 15px 15px #ffc600;
+  border: 3px solid #555f02;
+  background-color: #262725;
+  text-align: center;
+  padding: 2rem;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.show {
+  display: block;
+}
+
+.styledLink,
+.styledButton {
   display: inline-block;
   font-family: "Dokdo", cursive;
   font-size: 3rem;
   padding: 1rem;
   background-color: #555f02;
   color: #fafffe;
+}
+
+.styledButton {
+  border: none;
 }
 
 .gallery-section {

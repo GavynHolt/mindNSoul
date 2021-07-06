@@ -169,13 +169,46 @@ a {
   }
 }
 
-.styledLink {
+.modalRoot {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(184, 190, 171, 0.5);
+  z-index: 100;
+}
+
+.modal {
+  position: absolute;
+  // display: none;
+  min-width: 300px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 15px 15px $marigold;
+  border: 3px solid $mudGreen;
+  background-color: $charcoal;
+  text-align: center;
+  padding: 2rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.show {
+  display: block;
+}
+
+.styledLink,
+.styledButton {
   display: inline-block;
   font-family: $fontDokdo;
   font-size: 3rem;
   padding: 1rem;
   background-color: $mudGreen;
   color: $iceBlue;
+}
+
+.styledButton {
+  border: none;
 }
 
 .gallery-section {
