@@ -468,8 +468,8 @@ a {
   display: none;
   position: fixed;
   inset: 0;
-  background-color: rgba(184, 190, 171, 0.5);
   z-index: 100;
+  background-color: rgba(184, 190, 171, 0.5);
 }
 
 .modal {
@@ -491,8 +491,27 @@ a {
 
 .show {
   display: block;
+  -webkit-animation: fade-in 0.2s;
+          animation: fade-in 0.2s;
 }
 
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .styledLink,
 .styledButton {
   display: inline-block;
