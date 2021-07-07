@@ -316,7 +316,8 @@ nav #navLinks {
           justify-content: space-between;
 }
 nav #navLinks li a {
-  padding: 10px;
+  display: inline-block;
+  padding: 0 10px;
   font-family: "Lato", sans-serif;
   color: #fafffe;
   font-weight: 700;
@@ -1074,8 +1075,19 @@ form button:focus {
     text-align: right;
     top: 100%;
     right: 0;
-    min-width: 30%;
-    height: 0;
+    z-index: 10;
+    min-width: 33%;
+    max-height: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  nav #navLinks li a {
+    padding: 1.6rem;
+  }
+  nav #navLinks.showNav {
+    max-height: 300px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
   }
 
   .feature .headings h1 {

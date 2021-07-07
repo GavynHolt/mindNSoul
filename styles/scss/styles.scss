@@ -5,10 +5,6 @@
 @import "variables";
 @import "mixins";
 
-// * {
-//   border: 1px solid red;
-// }
-
 * {
   margin: 0;
   padding: 0;
@@ -69,7 +65,8 @@ nav {
     justify-content: space-between;
     li {
       a {
-        padding: 10px;
+        display: inline-block;
+        padding: 0 10px;
         font-family: $fontLato;
         color: $iceBlue;
         font-weight: 700;
@@ -175,6 +172,7 @@ a {
   inset: 0;
   background-color: rgba(184, 190, 171, 0.5);
   z-index: 100;
+  // transition: 1s;
 }
 
 .modal {
@@ -705,8 +703,19 @@ form {
       text-align: right;
       top: 100%;
       right: 0;
-      min-width: 30%;
-      height: 0;
+      z-index: 10;
+      min-width: 33%;
+      max-height: 0;
+      transition: 0.5s;
+      li {
+        a {
+          padding: 1.6rem;
+        }
+      }
+    }
+    #navLinks.showNav {
+      max-height: 300px;
+      transition: 0.5s;
     }
   }
 

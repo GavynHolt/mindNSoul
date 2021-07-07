@@ -1,18 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
   // open and close hamburger menu
   document.querySelector(".hamburger").addEventListener("click", function () {
-    console.log("hamburger clicked");
     const navMenu = document.querySelector("#navLinks");
-    if (navMenu.style.height === "auto") {
-      navMenu.style.height = "0";
-    } else {
-      navMenu.style.height = "auto";
-    }
+    navMenu.classList.toggle("showNav");
+    document.addEventListener("click", function (e) {
+      if (
+        // if user clicks off of drop down menu, close menu
+        e.target.closest("#navLinks") === null &&
+        e.target.closest(".hamburger") === null
+      ) {
+        navMenu.classList.remove("showNav");
+      }
+    });
   });
 
   // open modal
+  // add event listeners to all buttons
   const openButtonList = document.querySelectorAll(".openModal");
-
   for (button of openButtonList) {
     button.addEventListener("click", function (e) {
       const currentModal =
