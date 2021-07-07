@@ -364,10 +364,6 @@ nav .hamburger {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.feature .headings p {
-  margin: 0;
-  font-size: 4rem;
-}
 .feature .image {
   position: relative;
   -webkit-box-flex: 0;
@@ -397,6 +393,14 @@ h1 {
   line-height: inherit;
   letter-spacing: inherit;
   margin: 0;
+}
+h1 span {
+  display: block;
+  font-family: "Lato", sans-serif;
+  line-height: 3.2rem;
+  letter-spacing: 2px;
+  color: #fafffe;
+  font-size: 4rem;
 }
 
 h2 {
@@ -894,8 +898,8 @@ aside ul a {
 
 .contactInfo {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 300px;
-          flex: 1 1 300px;
+      -ms-flex: 1 1 350px;
+          flex: 1 1 350px;
   margin-left: 5vw;
 }
 .contactInfo ul li {
@@ -1112,7 +1116,7 @@ form button:focus {
   .feature .headings h1 {
     font-size: calc(2.8rem + 11vw);
   }
-  .feature .headings p {
+  .feature .headings h1 span {
     font-size: calc(2rem + 2vw);
   }
   .feature .headings img {

@@ -98,10 +98,6 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    p {
-      margin: 0;
-      font-size: 4rem;
-    }
   }
   .image {
     position: relative;
@@ -123,6 +119,11 @@ img {
 }
 
 h1 {
+  span {
+    display: block;
+    @include paragraphFont();
+    font-size: 4rem;
+  }
   @include headingFont(11.5rem);
   margin: 0;
 }
@@ -526,7 +527,7 @@ aside {
 }
 
 .contactInfo {
-  flex: 1 1 300px;
+  flex: 1 1 350px;
   margin-left: 5vw;
   ul {
     li {
@@ -698,7 +699,6 @@ form {
 
 @media (max-width: 800px) {
   nav {
-    // position: relative;
     .hamburger {
       height: auto;
       position: relative;
@@ -730,10 +730,10 @@ form {
   .feature {
     .headings {
       h1 {
+        span {
+          font-size: calc(2rem + 2vw);
+        }
         font-size: calc(2.8rem + 11vw);
-      }
-      p {
-        font-size: calc(2rem + 2vw);
       }
       img {
         height: auto;

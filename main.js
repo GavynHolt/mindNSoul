@@ -1,17 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
   // open and close hamburger menu
   document.querySelector(".hamburger").addEventListener("click", function () {
-    const navMenu = document.querySelector("#navLinks");
-    navMenu.classList.toggle("showNav");
-    document.addEventListener("click", function (e) {
+    // close navLinks and remove event listeners
+    const closeNav = function () {
+      navMenu.classList.remove("showNav");
+      document.removeEventListener("click", clickOffToCloseNav);
+      document.removeEventListener("keydown", ESCKeyCloseNav);
+    };
+    // if user clicks outside of navLinks area, close navLinks
+    const clickOffToCloseNav = function (e) {
       if (
-        // if user clicks off of drop down menu, close menu
         e.target.closest("#navLinks") === null &&
         e.target.closest(".hamburger") === null
       ) {
-        navMenu.classList.remove("showNav");
+        closeNav();
       }
-    });
+    };
+    // if user presses ESC key, close navLinks
+    const ESCKeyCloseNav = function (e) {
+      if (e.key.toLowerCase() == "escape") {
+        closeNav();
+      }
+    };
+
+    // open navLinks on hamburger click
+    const navMenu = document.querySelector("#navLinks");
+    navMenu.classList.toggle("showNav");
+    // if navLinks is open, add event listeners to close
+    if (navMenu.classList.contains("showNav")) {
+      // add event listeners for clicking off navLinks, and pressing ESC Key
+      document.addEventListener("click", clickOffToCloseNav);
+      document.addEventListener("keydown", ESCKeyCloseNav);
+    }
   });
 
   // open modal
