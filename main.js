@@ -42,7 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function (e) {
       // get modal and close button objects
       const currentModal =
-        e.target.parentNode.parentNode.querySelector(".modalRoot");
+        // e.target.parentNode.parentNode.querySelector(".modalRoot");
+        e.target.closest("section").querySelector(".modalRoot");
       const closeModalButton = currentModal.querySelector(".closeModal");
       // show modal
       currentModal.classList.add("show");
