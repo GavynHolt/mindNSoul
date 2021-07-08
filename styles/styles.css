@@ -539,6 +539,9 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 2vw;
 }
+.gallery-section .gallery li {
+  list-style: none;
+}
 
 .info {
   background-color: #1e140e;
@@ -656,6 +659,14 @@ a {
       -ms-flex-align: end;
           align-items: flex-end;
   text-align: right;
+}
+
+.bannerImage {
+  background-image: url(../images/banner-image.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
 }
 
 .freeTrials {

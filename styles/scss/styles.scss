@@ -225,6 +225,9 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2vw;
+    li {
+      list-style: none;
+    }
   }
 }
 
@@ -327,6 +330,14 @@ a {
       text-align: right;
     }
   }
+}
+
+.bannerImage {
+  background-image: url(../images/banner-image.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
 }
 
 .freeTrials {
