@@ -1176,6 +1176,8 @@ form button:focus {
   }
   .gallery-section .carouselCurrent {
     display: block;
+    -webkit-animation: fade-in 0.5s;
+            animation: fade-in 0.5s;
   }
 
   #blog aside {

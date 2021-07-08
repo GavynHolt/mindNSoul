@@ -779,6 +779,7 @@ form {
     }
     .carouselCurrent {
       display: block;
+      animation: fade-in 0.5s;
     }
   }
 
