@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // open and close hamburger menu
+  // Open and close hamburger menu
   document.querySelector(".hamburger").addEventListener("click", function () {
     // close navLinks and remove event listeners
     const closeNav = function () {
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // open modal
+  // Open modal
   // add event listeners to all buttons for 3 close events
   // remove all close event listers on modal close
   const openButtonList = document.querySelectorAll(".openModal");
@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const closeModalButton = currentModal.querySelector(".closeModal");
       // show modal
       currentModal.classList.add("show");
-
       // close modal and remove close event listeners
       const closeModal = function () {
         currentModal.classList.remove("show");
@@ -79,4 +78,44 @@ document.addEventListener("DOMContentLoaded", function () {
       document.addEventListener("keydown", ESCKeyModalClose);
     });
   }
+
+  // Carousel Logic
+  let slideIdx = 1;
+
+  // cache gallery and buttons
+  const imgArray = document.querySelectorAll(".gallery .image");
+  const prevButton = document.querySelector(".previous");
+  const nextButton = document.querySelector(".next");
+
+  //functions
+  const displaySlide = function () {
+    imgArray[slideIdx].classList.add("carouselCurrent");
+  };
+
+  const hideSlide = function () {
+    imgArray[slideIdx].classList.remove("carouselCurrent");
+  };
+
+  displaySlide();
+
+  console.log(imgArray);
+  prevButton.addEventListener("click", function () {
+    hideSlide();
+    if (slideIdx == 0) {
+      slideIdx = 2;
+    } else {
+      slideIdx--;
+    }
+    displaySlide();
+  });
+
+  nextButton.addEventListener("click", function () {
+    hideSlide();
+    if (slideIdx == 2) {
+      slideIdx = 0;
+    } else {
+      slideIdx++;
+    }
+    displaySlide();
+  });
 });

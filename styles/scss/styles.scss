@@ -218,6 +218,11 @@ a {
   border: none;
 }
 
+.previous,
+.next {
+  display: none;
+}
+
 .gallery-section {
   padding: 5vw 0;
   background-color: $charcoal;
@@ -627,18 +632,6 @@ form {
     padding-top: 5vw;
   }
 
-  .gallery-section .gallery {
-    grid-template-rows: repeat(3, 400px);
-    grid-template-columns: 1fr;
-    justify-items: center;
-    .image:first-child {
-      justify-self: start;
-    }
-    .image:last-child {
-      justify-self: end;
-    }
-  }
-
   .programs {
     width: 90%;
     margin: 0 auto;
@@ -766,6 +759,26 @@ form {
         align-items: center;
         text-align: center;
       }
+    }
+  }
+
+  .previous,
+  .next {
+    display: inherit;
+  }
+
+  .gallery-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .gallery {
+      display: block;
+    }
+    .image {
+      display: none;
+    }
+    .carouselCurrent {
+      display: block;
     }
   }
 
