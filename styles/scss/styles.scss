@@ -5,10 +5,6 @@
 @import "variables";
 @import "mixins";
 
-// * {
-//   border: 1px solid red;
-// }
-
 * {
   margin: 0;
   padding: 0;
@@ -57,10 +53,11 @@ nav {
   justify-content: space-between;
   padding-top: 1.6rem;
   position: relative;
+
   .logo {
     @include logoFont();
   }
-  ul {
+  #navLinks {
     flex: 0 1 500px;
     list-style: none;
     display: flex;
@@ -68,13 +65,17 @@ nav {
     justify-content: space-between;
     li {
       a {
-        padding: 10px;
+        display: inline-block;
+        padding: 0 10px;
         font-family: $fontLato;
         color: $iceBlue;
         font-weight: 700;
         text-transform: uppercase;
         line-height: 2.9rem;
         letter-spacing: 1px;
+      }
+      .selected {
+        color: $marigold;
       }
     }
   }
@@ -83,10 +84,6 @@ nav {
     height: 0;
     overflow: hidden;
     flex-shrink: 0;
-    position: absolute;
-  }
-  .selected {
-    color: $marigold;
   }
 }
 
@@ -101,10 +98,6 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    p {
-      margin: 0;
-      font-size: 4rem;
-    }
   }
   .image {
     position: relative;
@@ -126,6 +119,11 @@ img {
 }
 
 h1 {
+  span {
+    display: block;
+    @include paragraphFont();
+    font-size: 4rem;
+  }
   @include headingFont(11.5rem);
   margin: 0;
 }
@@ -169,13 +167,60 @@ a {
   }
 }
 
-.styledLink {
+.modalRoot {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(184, 190, 171, 0.5);
+}
+
+.modal {
+  position: absolute;
+  min-width: 300px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 15px 15px $marigold;
+  border: 3px solid $mudGreen;
+  background-color: $charcoal;
+  text-align: center;
+  padding: 2rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.show {
+  display: block;
+  animation: fade-in 0.2s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.styledLink,
+.styledButton {
   display: inline-block;
   font-family: $fontDokdo;
   font-size: 3rem;
   padding: 1rem;
   background-color: $mudGreen;
   color: $iceBlue;
+}
+
+.styledButton {
+  border: none;
+}
+
+.previous,
+.next {
+  display: none;
 }
 
 .gallery-section {
@@ -185,6 +230,9 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2vw;
+    li {
+      list-style: none;
+    }
   }
 }
 
@@ -287,6 +335,14 @@ a {
       text-align: right;
     }
   }
+}
+
+.bannerImage {
+  background-image: url(../images/banner-image.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
 }
 
 .freeTrials {
@@ -487,7 +543,7 @@ aside {
 }
 
 .contactInfo {
-  flex: 1 1 300px;
+  flex: 1 1 350px;
   margin-left: 5vw;
   ul {
     li {
@@ -576,18 +632,6 @@ form {
     padding-top: 5vw;
   }
 
-  .gallery-section .gallery {
-    grid-template-rows: repeat(3, 400px);
-    grid-template-columns: 1fr;
-    justify-items: center;
-    .image:first-child {
-      justify-self: start;
-    }
-    .image:last-child {
-      justify-self: end;
-    }
-  }
-
   .programs {
     width: 90%;
     margin: 0 auto;
@@ -663,20 +707,37 @@ form {
       height: auto;
       position: relative;
     }
-    ul {
+    #navLinks {
       position: absolute;
-      height: 0;
+      display: block;
       overflow: hidden;
+      background-color: $mudGreen;
+      text-align: right;
+      top: 100%;
+      right: 0;
+      z-index: 10;
+      min-width: 33%;
+      max-height: 0;
+      transition: 0.5s;
+      li {
+        a {
+          padding: 1.6rem;
+        }
+      }
+    }
+    #navLinks.showNav {
+      max-height: 300px;
+      transition: 0.5s;
     }
   }
 
   .feature {
     .headings {
       h1 {
+        span {
+          font-size: calc(2rem + 2vw);
+        }
         font-size: calc(2.8rem + 11vw);
-      }
-      p {
-        font-size: calc(2rem + 2vw);
       }
       img {
         height: auto;
@@ -698,6 +759,27 @@ form {
         align-items: center;
         text-align: center;
       }
+    }
+  }
+
+  .previous,
+  .next {
+    display: inherit;
+  }
+
+  .gallery-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .gallery {
+      display: block;
+    }
+    .image {
+      display: none;
+    }
+    .carouselCurrent {
+      display: block;
+      animation: fade-in 0.5s;
     }
   }
 
